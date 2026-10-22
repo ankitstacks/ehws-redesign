@@ -9,20 +9,25 @@ export default function AdmissionPopup() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    if (location.pathname !== "/") {
-      setIsOpen(false);
-      return;
-    }
+  
+useEffect(() => {
+  if (location.pathname !== "/") {
+    setIsOpen(false);
+    return;
+  }
 
-    setIsOpen(true);
+  // Pehle loading animation ko complete hone ka time do.
+  setIsOpen(false);
 
-    const timer = window.setTimeout(() => {
-      setIsOpen(false);
-    }, 8000);
+  const showTimer = window.setTimeout(() => {
+  setIsOpen(true);
+}, 5000);
 
-    return () => window.clearTimeout(timer);
-  }, [location.pathname]);
+  return () => {
+    window.clearTimeout(showTimer);
+  };
+}, [location.pathname]);
+
 
   useEffect(() => {
     if (!isOpen) return;

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import {
@@ -21,6 +22,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import AdmissionPopup from "./components/AdmissionPopup";
+import WebsitePreloader from "./WebsitePreloader.jsx";
 import "./App.css";
 
 /* =========================================================
@@ -205,7 +207,6 @@ const heroSlides = [
 
 /* =========================================================
    LIFE AT EMERALD HEIGHTS DATA
-   UPDATED WITH YOUR SCHOOL THUMBNAIL IMAGES
 ========================================================= */
 
 const lifeAtEmeraldHeights = [
@@ -282,7 +283,6 @@ const schoolVideos = [
    BRAND
 ========================================================= */
 
-
 function Brand({ light = false }) {
   return (
     <a
@@ -298,7 +298,6 @@ function Brand({ light = false }) {
     </a>
   );
 }
-
 
 /* =========================================================
    HEADER
@@ -408,7 +407,9 @@ function Header() {
                           initial={{ opacity: 0, x: -6 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.035 }}
-                          onClick={(event) => handleNavClick(event, child.href)}
+                          onClick={(event) =>
+                            handleNavClick(event, child.href)
+                          }
                           className="dropdown-link"
                         >
                           <span>{child.label}</span>
@@ -771,8 +772,8 @@ function ApproachSection() {
           </h2>
 
           <p className="section-description">
-            A meaningful education helps students grow academically, creatively,
-            socially and emotionally.
+            A meaningful education helps students grow academically,
+            creatively, socially and emotionally.
           </p>
         </div>
 
@@ -868,7 +869,10 @@ function UniversityAchievements() {
   const touchStartX = useRef(null);
 
   const visibleCards = 3;
-  const maxIndex = Math.max(0, universityAchievements.length - visibleCards);
+  const maxIndex = Math.max(
+    0,
+    universityAchievements.length - visibleCards,
+  );
 
   const next = () => {
     setActiveIndex((index) => (index >= maxIndex ? 0 : index + 1));
@@ -1154,7 +1158,9 @@ function SchoolVideoSection() {
                       <Play size={23} fill="currentColor" />
                     </button>
 
-                    <span className="school-video-play-label">WATCH VIDEO</span>
+                    <span className="school-video-play-label">
+                      WATCH VIDEO
+                    </span>
                   </>
                 )}
               </div>
@@ -1239,8 +1245,8 @@ function LifeAtEmeraldHeights() {
           </h2>
 
           <p>
-            Explore the experiences, opportunities and ideas that shape learning
-            beyond the classroom.
+            Explore the experiences, opportunities and ideas that shape
+            learning beyond the classroom.
           </p>
 
           <div className="life-emerald-divider">
@@ -1280,7 +1286,9 @@ function LifeAtEmeraldHeights() {
               </a>
 
               <div className="life-emerald-card-content">
-                <span className="life-emerald-category">{item.category}</span>
+                <span className="life-emerald-category">
+                  {item.category}
+                </span>
 
                 <h3>{item.title}</h3>
 
@@ -1392,7 +1400,10 @@ function Footer() {
       links: [
         { label: "Prospectus 2027–28", href: "/Prospectus-2027-28.pdf" },
         { label: "Fee Structure 2027–28", href: "/fee-structure" },
-        { label: "Newsletters", href: "/News-Letter-First-Edition-2025-26.pdf" },
+        {
+          label: "Newsletters",
+          href: "/News-Letter-First-Edition-2025-26.pdf",
+        },
         { label: "Documents", href: "/documents" },
       ],
     },
@@ -1401,7 +1412,10 @@ function Footer() {
       links: [
         { label: "Photo Gallery", href: "/photo-gallery" },
         { label: "School Map", href: "/our-campus" },
-        { label: "Book List 2026–27", href: "/EHWS-BOOK-LIST-NURSERY-TO-IX-WS-2026-27-1.pdf" },
+        {
+          label: "Book List 2026–27",
+          href: "/EHWS-BOOK-LIST-NURSERY-TO-IX-WS-2026-27-1.pdf",
+        },
         { label: "School Uniform", href: "/uniform" },
         { label: "Fee Payment Tutorial", href: "/fee-payment-tutorial" },
       ],
@@ -1413,7 +1427,10 @@ function Footer() {
         { label: "Privacy Policy", href: "/PRIVACY-POLICY-EHWS.pdf" },
         { label: "Payment Policy", href: "/Payment-Policy.pdf" },
         { label: "Fee Refund Policy", href: "/FEE-REFUND-POLICY.pdf" },
-        { label: "Terms & Conditions", href: "/Revised-TERMS-CONDITIONS-EHWS.pdf" },
+        {
+          label: "Terms & Conditions",
+          href: "/Revised-TERMS-CONDITIONS-EHWS.pdf",
+        },
         {
           label: "Mandatory Public Disclosure",
           href: "/Mandatory-Disclosure-Details-Oct-8-2026.pdf",
@@ -1473,7 +1490,10 @@ function Footer() {
               <span>info@ehws.edu.in</span>
             </a>
 
-            <a className="ehws-footer-contact-link" href="tel:+917880091400">
+            <a
+              className="ehws-footer-contact-link"
+              href="tel:+917880091400"
+            >
               <Phone size={17} strokeWidth={1.6} />
               <span>7880091400–401</span>
             </a>
@@ -1593,7 +1613,6 @@ export default function App() {
 
     if (!("IntersectionObserver" in window)) {
       revealTargets.forEach((element) => element.classList.add("is-visible"));
-
       return;
     }
 
@@ -1616,6 +1635,9 @@ export default function App() {
 
   return (
     <div className="app-shell">
+      {/* Initial website loading animation */}
+      <WebsitePreloader />
+
       <Header />
 
       <main>
