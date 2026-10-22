@@ -1,0 +1,1131 @@
+
+/* =========================================================
+   INTRODUCTION PAGE
+   Scoped styles only — does not alter the homepage.
+========================================================= */
+
+.introduction-page {
+  --intro-green: #123d32;
+  --intro-deep: #0b2923;
+  --intro-gold: #c5a15b;
+  --intro-gold-light: #f0dcae;
+  --intro-ivory: #f7f5ef;
+  --intro-ink: #242a27;
+  --intro-muted: #737872;
+  --intro-display: "Playfair Display", Georgia, serif;
+  --intro-body: "DM Sans", Arial, sans-serif;
+
+  position: relative;
+  overflow: clip;
+  background: var(--intro-ivory);
+  color: var(--intro-ink);
+  font-family: var(--intro-body);
+}
+
+.introduction-page,
+.introduction-page *,
+.introduction-page *::before,
+.introduction-page *::after {
+  box-sizing: border-box;
+}
+
+.introduction-page img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.introduction-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.introduction-page button {
+  font: inherit;
+}
+
+.introduction-page h1,
+.introduction-page h2,
+.introduction-page h3,
+.introduction-page p {
+  margin-top: 0;
+}
+
+.introduction-page h1,
+.introduction-page h2,
+.introduction-page h3 {
+  font-family: var(--intro-display);
+  font-weight: 400;
+}
+
+.introduction-page p {
+  line-height: 1.9;
+}
+
+.introduction-container {
+  width: min(1240px, calc(100% - 80px));
+  margin-inline: auto;
+}
+
+.introduction-section {
+  padding-block: 115px;
+}
+
+/* Eyebrow labels */
+
+.introduction-page .subpage-eyebrow,
+.introduction-page .inspiration-section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--intro-green);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  line-height: 1.8;
+}
+
+.introduction-page .subpage-eyebrow > span,
+.introduction-page .inspiration-section-label > span:first-child {
+  display: inline-block;
+  flex: 0 0 auto;
+  color: var(--intro-gold);
+}
+
+.introduction-page .subpage-eyebrow::before,
+.introduction-page .inspiration-section-label::before {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  flex: 0 0 auto;
+  background: var(--intro-gold);
+}
+
+.introduction-page .subpage-eyebrow-light,
+.introduction-page .inspiration-section-label.light-label {
+  color: var(--intro-gold-light);
+}
+
+/* Hero */
+
+.introduction-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 740px;
+  height: 100svh;
+  max-height: 1050px;
+  align-items: center;
+  overflow: hidden;
+  background: var(--intro-deep);
+  color: white;
+}
+
+.introduction-hero-image,
+.introduction-hero-overlay,
+.introduction-hero-rings {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.introduction-hero-image {
+  z-index: -3;
+}
+
+.introduction-hero-image img {
+  animation: introduction-hero-zoom 18s ease-in-out infinite alternate;
+  object-position: center;
+}
+
+.introduction-hero-overlay {
+  z-index: -2;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 27, 22, 0.9) 0%,
+      rgba(5, 27, 22, 0.72) 48%,
+      rgba(5, 27, 22, 0.25) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(5, 27, 22, 0.52),
+      transparent 58%
+    );
+}
+
+.introduction-hero-rings {
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.introduction-hero-rings span {
+  position: absolute;
+  top: 53%;
+  right: -160px;
+  width: 520px;
+  height: 520px;
+  border: 1px solid rgba(240, 220, 174, 0.15);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.introduction-hero-rings span:nth-child(2) {
+  right: -90px;
+  width: 380px;
+  height: 380px;
+}
+
+.introduction-hero-rings span:nth-child(3) {
+  right: -20px;
+  width: 240px;
+  height: 240px;
+}
+
+.introduction-hero-content {
+  position: relative;
+  width: min(1440px, calc(100% - 120px));
+  margin-inline: auto;
+  padding-top: 105px;
+}
+
+.introduction-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 66px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 10px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.introduction-breadcrumb a:hover {
+  color: var(--intro-gold-light);
+}
+
+.introduction-breadcrumb strong {
+  color: var(--intro-gold-light);
+  font-weight: 600;
+}
+
+.introduction-hero-copy {
+  max-width: 900px;
+}
+
+.introduction-hero-copy .inspiration-section-label,
+.introduction-hero-copy .subpage-eyebrow {
+  margin-bottom: 24px;
+}
+
+.introduction-hero-kicker {
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(16px, 1.5vw, 22px);
+}
+
+.introduction-hero h1 {
+  margin-bottom: 25px;
+  color: #fffdf6;
+  font-size: clamp(58px, 8.2vw, 112px);
+  letter-spacing: -3.5px;
+  line-height: 0.99;
+}
+
+.introduction-hero h1 em,
+.introduction-campus h2 em {
+  color: var(--intro-gold-light);
+  font-weight: 400;
+}
+
+.introduction-hero-description {
+  max-width: 570px;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.introduction-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 26px;
+}
+
+.introduction-button {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 22px;
+  font-size: 11px;
+  font-weight: 700;
+  transition:
+    background 250ms ease,
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+.introduction-button:hover {
+  transform: translateY(-3px);
+}
+
+.introduction-button-gold {
+  background: var(--intro-gold);
+  color: var(--intro-deep) !important;
+}
+
+.introduction-button-gold:hover {
+  background: var(--intro-gold-light);
+}
+
+.introduction-button-dark {
+  background: var(--intro-green);
+  color: white !important;
+}
+
+.introduction-button-dark:hover {
+  background: var(--intro-deep);
+}
+
+.introduction-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 12px;
+  transition: gap 200ms ease, color 200ms ease;
+}
+
+.introduction-text-link:hover {
+  gap: 15px;
+  color: var(--intro-gold-light);
+}
+
+.introduction-hero-bottom {
+  position: absolute;
+  right: 0;
+  bottom: -105px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 9px;
+  letter-spacing: 1.7px;
+}
+
+.introduction-hero-bottom a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--intro-gold-light);
+}
+
+/* Introduction story */
+
+.introduction-story {
+  background: var(--intro-ivory);
+}
+
+.introduction-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.94fr;
+  align-items: center;
+  gap: clamp(55px, 8vw, 115px);
+}
+
+.introduction-story-visual {
+  position: relative;
+  min-height: 540px;
+}
+
+.introduction-story-image {
+  position: absolute;
+  inset: 0 42px 40px 0;
+  overflow: hidden;
+  background: #dfded3;
+}
+
+.introduction-story-image img {
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.introduction-story-visual:hover .introduction-story-image img {
+  transform: scale(1.045);
+}
+
+.introduction-image-index {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  width: 74%;
+  min-height: 78px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 22px;
+  background: var(--intro-green);
+  color: var(--intro-gold-light);
+  font-size: 9px;
+  letter-spacing: 1.8px;
+}
+
+.introduction-image-note {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 16px;
+  background: var(--intro-gold);
+  color: var(--intro-deep);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.introduction-story-copy .inspiration-section-label,
+.introduction-story-copy .subpage-eyebrow {
+  margin-bottom: 24px;
+}
+
+.introduction-story-copy h2,
+.introduction-learning-heading h2 {
+  margin-bottom: 26px;
+  color: var(--intro-ink);
+  font-size: clamp(43px, 5vw, 66px);
+  letter-spacing: -1.8px;
+  line-height: 1.08;
+}
+
+.introduction-story-copy h2 em,
+.introduction-learning-heading h2 em {
+  color: var(--intro-green);
+}
+
+.introduction-story-copy p {
+  margin-bottom: 18px;
+  color: var(--intro-muted);
+  font-size: 13px;
+}
+
+.introduction-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--intro-gold);
+  color: var(--intro-green) !important;
+  font-size: 11px;
+  font-weight: 700;
+  transition: gap 200ms ease;
+}
+
+.introduction-inline-link:hover {
+  gap: 18px;
+}
+
+/* Philosophy */
+
+.introduction-philosophy {
+  background: var(--intro-deep);
+  color: white;
+}
+
+.introduction-philosophy-heading {
+  max-width: 780px;
+  margin-bottom: 65px;
+}
+
+.introduction-philosophy-heading .inspiration-section-label,
+.introduction-philosophy-heading .subpage-eyebrow {
+  margin-bottom: 22px;
+}
+
+.introduction-philosophy-heading h2 {
+  margin-bottom: 22px;
+  color: white;
+  font-size: clamp(44px, 5.5vw, 72px);
+  letter-spacing: -1.7px;
+  line-height: 1.07;
+}
+
+.introduction-philosophy-heading h2 em {
+  color: var(--intro-gold-light);
+}
+
+.introduction-philosophy-heading > p {
+  max-width: 550px;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+}
+
+.introduction-pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.introduction-pillar-card {
+  position: relative;
+  min-height: 285px;
+  padding: 30px 24px;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  transition: background 250ms ease, transform 250ms ease;
+}
+
+.introduction-pillar-card:first-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.introduction-pillar-card:hover {
+  background: rgba(255, 255, 255, 0.045);
+  transform: translateY(-4px);
+}
+
+.introduction-pillar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--intro-gold);
+}
+
+.introduction-pillar-top > span {
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.introduction-pillar-card h3 {
+  margin: 42px 0 14px;
+  color: white;
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+.introduction-pillar-card p {
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+.introduction-pillar-bottom {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  color: var(--intro-gold);
+}
+
+/* Interactive learning section */
+
+.introduction-learning {
+  background: var(--intro-ivory);
+}
+
+.introduction-learning-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 55px;
+  margin-bottom: 55px;
+}
+
+.introduction-learning-heading h2 {
+  margin: 20px 0 0;
+}
+
+.introduction-learning-heading > p {
+  max-width: 400px;
+  margin-bottom: 5px;
+  color: var(--intro-muted);
+  font-size: 13px;
+}
+
+.introduction-experience-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 48px;
+}
+
+.introduction-experience-tabs {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #d9d6cb;
+}
+
+.introduction-experience-tab {
+  display: flex;
+  width: 100%;
+  min-height: 112px;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 12px;
+  border: 0;
+  border-bottom: 1px solid #d9d6cb;
+  background: transparent;
+  color: var(--intro-ink);
+  text-align: left;
+  cursor: pointer;
+  transition: background 250ms ease, padding 250ms ease;
+}
+
+.introduction-experience-tab:hover,
+.introduction-experience-tab.is-active {
+  padding-left: 19px;
+  background: #efede4;
+}
+
+.introduction-experience-number {
+  align-self: flex-start;
+  padding-top: 4px;
+  color: var(--intro-gold);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.introduction-experience-tab-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.introduction-experience-tab-copy small {
+  color: var(--intro-green);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.introduction-experience-tab-copy strong {
+  font-family: var(--intro-display);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.introduction-experience-tab > svg {
+  flex: 0 0 auto;
+  color: var(--intro-green);
+}
+
+.introduction-experience-feature {
+  overflow: hidden;
+  background: white;
+}
+
+.introduction-experience-image {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+  background: #d7d8ca;
+}
+
+.introduction-experience-image img {
+  transition: transform 800ms ease;
+}
+
+.introduction-experience-feature:hover .introduction-experience-image img {
+  transform: scale(1.035);
+}
+
+.introduction-experience-image > span {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  padding: 10px 12px;
+  background: var(--intro-deep);
+  color: var(--intro-gold-light);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.introduction-experience-description {
+  padding: 25px 28px 28px;
+}
+
+.introduction-experience-description > span {
+  color: var(--intro-gold);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.introduction-experience-description h3 {
+  margin: 12px 0;
+  color: var(--intro-green);
+  font-size: 29px;
+}
+
+.introduction-experience-description p {
+  max-width: 560px;
+  margin-bottom: 0;
+  color: var(--intro-muted);
+  font-size: 12px;
+}
+
+/* Campus banner */
+
+.introduction-campus {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 620px;
+  align-items: center;
+  overflow: hidden;
+  background: var(--intro-deep);
+  color: white;
+}
+
+.introduction-campus-image,
+.introduction-campus-overlay {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+}
+
+.introduction-campus-image img {
+  object-position: center;
+  transition: transform 12s ease;
+}
+
+.introduction-campus:hover .introduction-campus-image img {
+  transform: scale(1.035);
+}
+
+.introduction-campus-overlay {
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 29, 23, 0.93),
+    rgba(6, 29, 23, 0.7) 55%,
+    rgba(6, 29, 23, 0.24)
+  );
+}
+
+.introduction-campus-inner {
+  padding-block: 100px;
+}
+
+.introduction-campus-copy {
+  max-width: 680px;
+}
+
+.introduction-campus-copy .inspiration-section-label,
+.introduction-campus-copy .subpage-eyebrow {
+  margin-bottom: 22px;
+}
+
+.introduction-campus h2 {
+  margin-bottom: 25px;
+  color: white;
+  font-size: clamp(46px, 6vw, 76px);
+  letter-spacing: -2px;
+  line-height: 1.05;
+}
+
+.introduction-campus-copy > p {
+  max-width: 530px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+}
+
+.introduction-campus-location {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 36px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.introduction-location-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(240, 220, 174, 0.55);
+  color: var(--intro-gold-light);
+}
+
+.introduction-campus-location > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.introduction-campus-location strong {
+  color: white;
+  font-family: var(--intro-display);
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.introduction-campus-location > div > span {
+  color: rgba(255, 255, 255, 0.63);
+  font-size: 11px;
+}
+
+.introduction-campus-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 27px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--intro-gold);
+  color: var(--intro-gold-light) !important;
+  font-size: 11px;
+  font-weight: 700;
+  transition: gap 200ms ease;
+}
+
+.introduction-campus-link:hover {
+  gap: 16px;
+}
+
+/* Closing call to action */
+
+.introduction-closing {
+  padding: 115px 24px;
+  background: #eeece3;
+  text-align: center;
+}
+
+.introduction-closing-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 850px;
+  margin-inline: auto;
+}
+
+.introduction-closing-symbol {
+  margin-bottom: 20px;
+  color: var(--intro-gold);
+  font-size: 37px;
+}
+
+.introduction-closing .inspiration-section-label,
+.introduction-closing .subpage-eyebrow {
+  justify-content: center;
+}
+
+.introduction-closing h2 {
+  margin: 22px 0;
+  color: var(--intro-ink);
+  font-size: clamp(45px, 6vw, 78px);
+  letter-spacing: -2px;
+  line-height: 1.06;
+}
+
+.introduction-closing h2 em {
+  color: var(--intro-green);
+}
+
+.introduction-closing-content > p {
+  max-width: 530px;
+  margin-bottom: 30px;
+  color: var(--intro-muted);
+  font-size: 13px;
+}
+
+.introduction-closing-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.introduction-closing-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--intro-green) !important;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Animation */
+
+@keyframes introduction-hero-zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.07);
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 1050px) {
+  .introduction-container {
+    width: calc(100% - 56px);
+  }
+
+  .introduction-story-grid {
+    gap: 48px;
+  }
+
+  .introduction-story-visual {
+    min-height: 460px;
+  }
+
+  .introduction-pillar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .introduction-pillar-card:nth-child(3) {
+    border-left: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .introduction-pillar-card:nth-child(n + 3) {
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .introduction-experience-layout {
+    gap: 28px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .introduction-container {
+    width: calc(100% - 36px);
+  }
+
+  .introduction-section {
+    padding-block: 76px;
+  }
+
+  .introduction-hero {
+    min-height: 720px;
+    height: 100svh;
+    max-height: 900px;
+  }
+
+  .introduction-hero-content {
+    width: calc(100% - 40px);
+    padding-top: 100px;
+  }
+
+  .introduction-breadcrumb {
+    gap: 8px;
+    margin-bottom: 50px;
+    font-size: 8px;
+  }
+
+  .introduction-hero h1 {
+    font-size: clamp(48px, 11vw, 74px);
+    letter-spacing: -2px;
+    line-height: 1.02;
+  }
+
+  .introduction-hero-description {
+    font-size: 12px;
+  }
+
+  .introduction-hero-actions {
+    gap: 17px;
+  }
+
+  .introduction-button {
+    min-height: 50px;
+    gap: 10px;
+    padding-inline: 15px;
+    font-size: 10px;
+  }
+
+  .introduction-text-link {
+    font-size: 11px;
+  }
+
+  .introduction-hero-bottom {
+    bottom: -90px;
+    font-size: 7px;
+    letter-spacing: 0.8px;
+  }
+
+  .introduction-story-grid {
+    grid-template-columns: 1fr;
+    gap: 46px;
+  }
+
+  .introduction-story-visual {
+    min-height: 420px;
+  }
+
+  .introduction-story-image {
+    inset: 0 30px 32px 0;
+  }
+
+  .introduction-image-index {
+    width: 80%;
+    min-height: 65px;
+    padding: 15px;
+    font-size: 8px;
+  }
+
+  .introduction-image-note {
+    top: 18px;
+    padding: 11px;
+    font-size: 9px;
+  }
+
+  .introduction-story-copy h2,
+  .introduction-learning-heading h2 {
+    font-size: clamp(40px, 9vw, 57px);
+    letter-spacing: -1.2px;
+  }
+
+  .introduction-story-copy p {
+    font-size: 12px;
+  }
+
+  .introduction-philosophy-heading {
+    margin-bottom: 40px;
+  }
+
+  .introduction-philosophy-heading h2 {
+    font-size: clamp(39px, 9vw, 56px);
+    letter-spacing: -1px;
+  }
+
+  .introduction-pillar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .introduction-pillar-card,
+  .introduction-pillar-card:first-child,
+  .introduction-pillar-card:nth-child(3) {
+    min-height: 220px;
+    padding: 25px 22px;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .introduction-pillar-card h3 {
+    margin-top: 27px;
+    font-size: 25px;
+  }
+
+  .introduction-pillar-card p {
+    max-width: 400px;
+    font-size: 12px;
+  }
+
+  .introduction-learning-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 35px;
+  }
+
+  .introduction-learning-heading > p {
+    font-size: 12px;
+  }
+
+  .introduction-experience-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .introduction-experience-tab {
+    min-height: 90px;
+    gap: 12px;
+    padding-inline: 8px;
+  }
+
+  .introduction-experience-tab-copy strong {
+    font-size: 19px;
+  }
+
+  .introduction-experience-image {
+    height: 250px;
+  }
+
+  .introduction-experience-description {
+    padding: 22px;
+  }
+
+  .introduction-experience-description h3 {
+    font-size: 26px;
+  }
+
+  .introduction-campus {
+    min-height: 570px;
+  }
+
+  .introduction-campus-inner {
+    padding-block: 75px;
+  }
+
+  .introduction-campus h2 {
+    font-size: clamp(42px, 9vw, 60px);
+  }
+
+  .introduction-campus-copy > p {
+    font-size: 12px;
+  }
+
+  .introduction-closing {
+    padding: 80px 20px;
+  }
+
+  .introduction-closing h2 {
+    font-size: clamp(42px, 9vw, 60px);
+    letter-spacing: -1px;
+  }
+
+  .introduction-closing-content > p {
+    font-size: 12px;
+  }
+
+  .introduction-closing-actions {
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .introduction-hero h1 {
+    font-size: 45px;
+  }
+
+  .introduction-hero-bottom {
+    gap: 10px;
+    font-size: 6px;
+  }
+
+  .introduction-image-index {
+    gap: 8px;
+    font-size: 7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .introduction-page *,
+  .introduction-page *::before,
+  .introduction-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
